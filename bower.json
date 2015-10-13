@@ -2,7 +2,7 @@
   "name": "site",
   "version": "1.0.0",
   "dependencies": {
+    "bootstrap": "~3.3.5"
   },
-  "overrides": {
-  }
+  "overrides": {}
 }
