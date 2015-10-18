@@ -1,31 +1,81 @@
 extends layout
 
 block content
+  //header 
   header#header
     div.container 
       a(href="#")
         image.logo(src="images/logo.png")
-        div.right
-  div.example-page
-    div.example-page--container
-      div
-        h1= title
-        p Welcome to #{title}
-        button.red-btn
-          span.icon.icon-back
-          |  button
-        h1 Header2 
-        h2 Header 2
-        h3 Header 3
-        h4 Header 4
-        h5 Header 5
-        h6 Header 6
-        p paragraph
-      div.example-page--left-side
-        h1 Header 1
-        h2 Header 2
-        h3 Header 3
-        h4 Header 4
-        h5 Header 5
-        h6 Header 6
-        p paragraph
+          div.right
+            a.phone(href="#") (02) 9698 7655
+            a.get-touch(href="#") Get In Touch 
+  //banner 
+  div.banner
+    div.container
+       h2 VIRTUAL REALITY 
+       h1 A new way to get undivided attention for your brand
+       a(href="#")
+         div
+           
+  //vr
+  div.vr
+    div.container
+      div.left.col-xs-7
+      div.right.col-xs-5
+        h2 WHAT IS VIRTUAL REALITY?
+        p Transport your audience into a new world or give them the ability to relive memories. Virtual reality sends them to the middle of the experience, where they can look anywhere, and see everything. Resulting in powerful experiences that stay at the forefront of their minds.
+        a(href="#").btn Get In Touch
+
+  //vr types
+  div.vr-types
+    div.top
+      h2 TYPES OF VIRTUAL REALITY
+    div.arrow-down 
+    div.container
+      div.col-xs-3.item
+        img(src="images/vr_1.png")
+        h2 Animation
+        p Animated virtual reality brings imaginary and unseen worlds to life through a cinematic experience. Giving you the reins to create what you want through 2D/3D modelled environments, characters, lighting, and texture.
+        p.grey Visualisation<br>Entertainment<br>Healthcare<br>Training
+      div.col-xs-3.item
+        img(src="images/vr_2.png")
+        h2 Live Action
+        p Live action virtual reality invites you to an event, another time and place whether it be pre-captured or live streamed. Allowing you to live experiences beyond what you would normally have access to. 
+        p.grey Training<br>Events<br>Sports<br>Entertainment
+      div.col-xs-3.item
+        img(src="images/vr_3.png")
+        h2 Motion Capture
+        p Combining virtual reality with motion capture lets people control the experience intuitivley with their bodies. Movements are translated instantly into the virtual world, immersing the whole body into the experience. 
+        p.grey Games<br>Training<br>Visualisation<br>Mutiplayer Experiences
+      div.col-xs-3.item
+        img(src="images/vr_4.png")
+        h2 Augmented Reality
+        p Through smart devices, augmented reality enriches the present reality in real-time by adding graphics, animations, sounds, or videos. Giving people access to more useful and applicable information.  
+        p.grey Shopping<br>Training<br>Healthcare<br>Visualisation
+
+
+  //clients
+  div.clients
+    div
+
+  //talk to us
+  div.talk_to_us
+    div.container
+      h2 Got some ideas or questions for your own VR project?
+      p If you'd like to get a demonstration of our virtual reality projects or have a chat about an interesting Virtual Reality project idea that you have
+      a(href="#").btn Talk To Us Today
+
+
+  //map
+  div.map
+    #map
+    //map content  
+    div.map-content
+      h2 Get in touch
+      p <span>E</span>creative@s1t2.com.au 
+      p <span>P</span>(02) 9698 7155
+      p <span>A</span>Suite 3/104 Buckingham Street, Surry Hills, Sydney NSW 2010, Australia
+
+  footer
+    .container 
+      p &copy; S1T2 2015
