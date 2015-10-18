@@ -1,10 +1,10 @@
+@import 'media';
 body{
   margin: 0;
 }
 
 h1,
-h2,
-p{
+h2 {
   font-weight: 300;
 }
 
@@ -74,12 +74,18 @@ header {
     .phone {
       color: #fff;    
       margin: 38px; 
+      @include mobile-landscape-and-below {
+        margin: 0; 
+      }
     }
 
     .get-touch {
       color: #fff;
       padding: 10px;
       border: solid #fff 1px;    
+      @include mobile-landscape-and-below {
+        display: none; 
+      } 
     }
 
   }
@@ -94,6 +100,7 @@ header {
   background: url('../images/banner_bg.png') top center;
   background-size: cover;
   text-align: center;
+  
   h1,
   h2 {
     color: #fff; 
@@ -106,6 +113,9 @@ header {
   h2 {
     padding-top: 134px; 
     opacity: 0.5; 
+    @include mobile-landscape-and-below {
+      padding-top: 50px; 
+    }
   }
   a {
     display: block;
@@ -116,7 +126,8 @@ header {
       background: url('../images/play_button.png') top center;
       width: 133px;
       height: 158px; 
-    } 
+    }
+    
   }
 }
 /*******banner*********/
@@ -128,11 +139,26 @@ header {
   .left {
     background: url('../images/vr_desk_left.png') no-repeat top center;
     height: 335px; 
+    @include tablet-portrait-and-below {
+      background: url('../images/vr_mobile_left.png') no-repeat top center;
+      height: 188px; 
+    }
   }
   .right {
     padding-top: 30px;
+    @include tablet-portrait-and-below {
+      padding: 0; 
+    }
+    h2 {
+      @include tablet-portrait-and-below {
+        display: none; 
+      }
+    }
     .btn {
       margin-top: 20px; 
+      @include tablet-portrait-and-below {
+        display: none; 
+      }
     } 
   }
 }
@@ -160,7 +186,16 @@ header {
   }
   .container {
     padding-top: 60px;
+    @include mobile-landscape-and-below {
+      padding: 0; 
+    }
     .item {
+      img {
+        width: 100%; 
+        @include tablet-portrait-and-below {
+          display: none; 
+        }
+      } 
       h2 {
         font-weight: 700; 
       } 
@@ -177,7 +212,7 @@ header {
   padding: 41px 0; 
   div {
     background: url('../images/clients.png') top center;
-    width: 1420px;
+    width: 100%;
     height: 58px;
     animation: moveSlideshow 12s linear infinite;
   }
@@ -209,9 +244,15 @@ header {
   width: 100%;
   height: 350px;
   position: relative; 
+  @include tablet-portrait-and-below {
+    height: auto; 
+  }
   #map {
     width: 100%; 
     height: 100%; 
+    @include tablet-portrait-and-below {
+      display: none; 
+    }
   }
   .map-content {
     position: absolute;
@@ -225,6 +266,12 @@ header {
     }
     span {
       padding-right: 30px; 
+    }
+    @include tablet-portrait-and-below {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 0 20px; 
     } 
   }
 }
