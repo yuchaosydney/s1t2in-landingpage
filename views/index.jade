@@ -6,9 +6,9 @@ block content
     div.container 
       a(href="#")
         image.logo(src="images/logo.png")
-          div.right
-            a.phone(href="#") (02) 9698 7655
-            a.get-touch(href="#") Get In Touch 
+      div.right
+        p.phone (02) 9698 7155
+        a.get-touch.button(href="#") Get In Touch 
   //banner 
   div.banner
     div.container
@@ -24,7 +24,7 @@ block content
       div.right.col-xs-12.col-sm-5
         h2 WHAT IS VIRTUAL REALITY?
         p Transport your audience into a new world or give them the ability to relive memories. Virtual reality sends them to the middle of the experience, where they can look anywhere, and see everything. Resulting in powerful experiences that stay at the forefront of their minds.
-        a(href="#").btn Get In Touch
+        a(href="#").btn Find Out More
 
   //vr types
   div.vr-types
@@ -57,7 +57,7 @@ block content
   //clients
   div.clients
     div
-
+    h2 our clients
   //talk to us
   div.talk_to_us
     div.container
@@ -75,20 +75,46 @@ block content
       .row
         .col-xs-1
             p E
-        .col-xs-11
+        .col-xs-7
             p creative@s1t2.com.au 
       
       .row
         .col-xs-1
             p P 
-        .col-xs-11
+        .col-xs-7
             p (02) 9698 7155
       
       .row
         .col-xs-1
             p A 
-        .col-xs-11
+        .col-xs-7
             p Suite 3/104 Buckingham Street, Surry Hills, Sydney NSW 2010, Australia
+
+  
+  #pageslide
+        #modal
+          a#modal-lukk.button(href="javascript:$.pageslide.close()" style="font-size: 14px;position: absolute; top: 7px; right: 10px; display:block; height: 13px; line-height: 13px; padding: 10px 14px; border-radius: 100%;") x
+          .textwidget
+            form.contact-form(name="contactform" method="post" action="send_form_email.php")
+              h2 Speak to an S1T2 representative
+              p Call us on (02) 9698 7144<br>or email digital@s1t2.com.au
+              p.alter_para Alternatively, leave your details and we will get  in touch shortly.
+              p.label YOUR NAME (REQUIRED) <br>
+                span.form-control-wrap.name
+                  input#form-name(placeholder="Name" name="name" size="40")
+              p.label.extra-margin YOUR EMAIL (REQUIRED)<br>
+                span.form-control-wrap.email
+                  input#form-email(placeholder="Email" name="email" size="40")
+              p.label.extra-margin YOUR PHONE NUMBER (REQUIRED)<br>
+                span.form-control-wrap.phone
+                  input#form-phone(placeholder="Phone" name="phone" size="40")
+              p.label.extra-margin LEAVE A MESSAGE (REQUIRED)<br>
+                span.form-control-wrap.message
+                  textarea#form-message(placeholder="Book a free consultation" name="message" rows="5" cols="30")
+              p
+                input.submit-form(value="BOOK A FREE CONSULTATION" type="submit")
+
+
 
   footer
     .container 
