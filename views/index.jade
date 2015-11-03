@@ -7,7 +7,7 @@ block content
       a(href="#")
         image.logo(src="images/logo.png")
       div.right
-        p.phone (02) 9698 7155
+        h2.phone (02) 9698 7155
         a.get-touch.button(href="#") Get In Touch 
   //banner 
   div.banner
@@ -36,22 +36,22 @@ block content
         img(src="images/vr_1.png")
         h2 Animation
         p Animated virtual reality brings imaginary and unseen worlds to life through a cinematic experience. Giving you the reins to create what you want through 2D/3D modelled environments, characters, lighting, and texture.
-        p.grey Visualisation<br>Entertainment<br>Healthcare<br>Training
+        p.grey-font Visualisation<br>Entertainment<br>Healthcare<br>Training
       div.col-xs-12.col-sm-3.item
         img(src="images/vr_2.png")
         h2 Live Action
         p Live action virtual reality invites you to an event, another time and place whether it be pre-captured or live streamed. Allowing you to live experiences beyond what you would normally have access to. 
-        p.grey Training<br>Events<br>Sports<br>Entertainment
+        p.grey-font Training<br>Events<br>Sports<br>Entertainment
       div.col-xs-12.col-sm-3.item
         img(src="images/vr_3.png")
         h2 Motion Capture
         p Combining virtual reality with motion capture lets people control the experience intuitivley with their bodies. Movements are translated instantly into the virtual world, immersing the whole body into the experience. 
-        p.grey Games<br>Training<br>Visualisation<br>Mutiplayer Experiences
+        p.grey-font Games<br>Training<br>Visualisation<br>Mutiplayer Experiences
       div.col-xs-12.col-sm-3.item
         img(src="images/vr_4.png")
         h2 Augmented Reality
         p Through smart devices, augmented reality enriches the present reality in real-time by adding graphics, animations, sounds, or videos. Giving people access to more useful and applicable information.  
-        p.grey Shopping<br>Training<br>Healthcare<br>Visualisation
+        p.grey-font Shopping<br>Training<br>Healthcare<br>Visualisation
 
 
   //clients
@@ -93,12 +93,12 @@ block content
   
   #pageslide
         #modal
-          a#modal-lukk.button(href="javascript:$.pageslide.close()" style="font-size: 14px;position: absolute; top: 7px; right: 10px; display:block; height: 13px; line-height: 13px; padding: 10px 14px; border-radius: 100%;") x
+          a#modal-lukk.btn-floating.btn-small.waves-effect.waves-light.yellow.darken-2.text-white.btn.button(href="javascript:$.pageslide.close()" style="font-size: 14px; text-align: center;position: absolute; top: 7px; right: 10px; display:block; border-radius: 100%;") x
           .textwidget
             form.contact-form(name="contactform" method="post" action="send_form_email.php")
-              h2 Speak to an S1T2 representative
-              p Call us on (02) 9698 7144<br>or email digital@s1t2.com.au
-              p.alter_para Alternatively, leave your details and we will get  in touch shortly.
+              h2 Speak to S1T2 today
+              p Call us on (02) 9698 7155<br>or email VR@s1t2.com.au
+              p.alter_para Alternatively, leave your details and we'll get in touch shortly.
               p.label YOUR NAME (REQUIRED) <br>
                 span.form-control-wrap.name
                   input#form-name(placeholder="Name" name="name" size="40")
@@ -112,7 +112,7 @@ block content
                 span.form-control-wrap.message
                   textarea#form-message(placeholder="Book a free consultation" name="message" rows="5" cols="30")
               p
-                input.submit-form(value="BOOK A FREE CONSULTATION" type="submit")
+                input.waves-effect.waves-light.btn.yellow.darken-2.text-white(value="BOOK A FREE CONSULTATION" type="submit")
 
 
 

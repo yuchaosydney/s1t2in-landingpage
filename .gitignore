@@ -1,2 +1,3 @@
-dist/
+dist/*
 node_modules/
+!dist/send_form_email.php

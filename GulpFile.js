@@ -49,7 +49,7 @@ function compileJade() {
   return gulp.src('views/*.jade')
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(jade())
-    .pipe(gulp.dest('dist/views'));
+    .pipe(gulp.dest('dist'));
 }  
 
 function compileJs() {

@@ -14,7 +14,7 @@ function initMap() {
     scrollwheel:  false
   });
   
-  var iconBase = 'http://localhost:3000/images/';
+  var iconBase = 'images/';
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
@@ -32,10 +32,10 @@ show_contact_form = function() {
       "display": "block",
       "right": "0px"
     }, animate_time);
-
+    $('body').attr('style','position: absolute;right: 0; width: 100%;');
     $('body').animate(
       {
-        "margin-left": "-450px"
+        "right": ($('#pageslide').width())
       },animate_time);
 }
 /**
@@ -45,13 +45,15 @@ hide_contact_form = function() {
   $('#pageslide').animate(
     {
       "display": "block",
-      "right": "-450px"
+      "right": -1 * ($('#pageslide').width())
     }, animate_time);
 
     $('body').animate(
     {
-      "margin-left": "0px"
-    },animate_time);
+      "right": "0px"
+    },animate_time,function(){
+      $('body').attr('style','position: relative;');
+    });
 }
 
       
@@ -68,4 +70,44 @@ $(".button").on("click", function( e ) {
     is_form_show = true;
   }
 
+});
+
+/**ajax sending email**/
+$('#pageslide input[type=submit]').click(function(e){
+  e.preventDefault();
+  
+  $.ajax({
+    url: 'send_form_email.php',
+    data: $("#pageslide form").serialize(),
+    error: function(data) {
+      alert("fatal error: please contact developer.");
+    },
+    success: function(data) {
+      obj = $.parseJSON(data); 
+      errorStr = "";
+      if(obj.errors.name != null) {
+        errorStr += obj.errors.name + "\n";
+      }
+      
+      if(obj.errors.phone != null) {
+        errorStr += obj.errors.phone + "\n";
+      }
+      
+      if(obj.errors.email != null) {
+        errorStr += obj.errors.email + "\n";
+      }
+      
+      if(obj.errors.message != null) {
+        errorStr += obj.errors.message + "\n";
+      }
+
+      if(errorStr == "") {
+        alert("Your email has been received. Thanks for contacting!"); 
+        $('#modal-lukk').trigger("click"); 
+      }else {
+        alert(errorStr); 
+      }
+    },
+    type: 'POST'
+  });
 });
