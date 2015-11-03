@@ -2,7 +2,8 @@
   "name": "site",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "Materialize": "materialize#~0.97.1"
   },
   "overrides": {}
 }

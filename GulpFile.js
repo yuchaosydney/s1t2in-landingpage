@@ -11,8 +11,8 @@ var
   imagemin       = require('gulp-imagemin'),
   pngquant       = require('imagemin-pngquant'),
   jpegtran       = require('imagemin-jpegtran'),
-  notify         = require('gulp-notify');
-
+  notify         = require('gulp-notify'),
+  jade           = require('gulp-jade');
 // WATCH
 gulp.task('watch', watch);
 
@@ -24,13 +24,15 @@ gulp.task('coffee', compileCoffee);
 
 gulp.task('js', compileJs);
 
+gulp.task('jade',compileJade);
+
 // Crush images and move them to dist/images
 gulp.task('crushImages', crushImages);
 gulp.task('compileTemplates', compileTemplates);
 gulp.task('moveFonts', moveFonts);
 
 
-gulp.task('build', ['sass', 'coffee', 'js', 'crushImages', 'compileTemplates', 'moveFonts']);
+gulp.task('build', ['jade','sass', 'coffee', 'js', 'crushImages', 'compileTemplates', 'moveFonts']);
 
 gulp.task('default', ['watch']);
 
@@ -40,7 +42,15 @@ function watch() {
   gulp.watch('src/scripts/**/*.js', ['js']);
   gulp.watch('src/images/*', ['crushImages']);
   gulp.watch('src/**/*.php', ['compileTemplates']);
+  gulp.watch('views/*.jade', ['jade']);
 }
+
+function compileJade() {
+  return gulp.src('views/*.jade')
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(jade())
+    .pipe(gulp.dest('dist/views'));
+}  
 
 function compileJs() {
   return gulp.src('src/scripts/**/*.js')
